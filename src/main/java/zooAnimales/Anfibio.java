@@ -39,7 +39,7 @@ public class Anfibio extends Animal {
         this.colorPiel = colorPiel;
     }
 
-    public boolean getVenenoso() {
+    public boolean isVenenoso() {
         return venenoso;
     }
 
@@ -56,13 +56,13 @@ public class Anfibio extends Animal {
         return "saltar";
     }
 
-    public static void crearRana(String nombre, int edad, String genero) {
-        new Anfibio(nombre, edad, "selva", genero,"rojo", true);
-        Anfibio.ranas++;
+    public static Anfibio crearRana(String nombre, int edad, String genero) {
+    	Anfibio.ranas++;
+        return new Anfibio(nombre, edad, "selva", genero,"rojo", true);
     }
 
-    public static void crearSalamandra(String nombre, int edad, String genero) {
-        new Anfibio(nombre, edad, "selva", genero,"negro y amarillo", false);
+    public static Anfibio crearSalamandra(String nombre, int edad, String genero) {
         Anfibio.salamandras++;
+        return new Anfibio(nombre, edad, "selva", genero,"negro y amarillo", false);
     }
 }
