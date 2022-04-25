@@ -2,62 +2,57 @@ package zooAnimales;
 
 import java.util.ArrayList;
 
-public class Mamifero extends Animal {
+public class Ave extends Animal {
 
-    private static ArrayList<Mamifero> listado;
-    public static int caballos;
-    public static int leones;
-    private boolean pelaje;
-    private int patas;
+    private static ArrayList<Ave> listado;
+    public static int halcones;
+    public static int aguilas;
+    private String colorPlumas;
 
-    public Mamifero(String nombre, int edad, String habitat,
-            String genero,boolean pelaje, int patas) {
+    public Ave(String nombre, int edad, String habitat,
+            String genero, String colorPlumas) {
         super(nombre, edad, habitat, genero);
-        this.pelaje = pelaje;
-        this.patas = patas;
-        Mamifero.listado.add(this);
+        this.colorPlumas = colorPlumas;
+        Ave.listado.add(this);
     }
 
-    public Mamifero() {
+    public Ave() {
         super();
-        Mamifero.listado.add(this);
+        Ave.listado.add(this);
     }
 
-    public static ArrayList<Mamifero> getListado() {
+    public static ArrayList<Ave> getListado() {
         return listado;
     }
 
-    public static void setListado(ArrayList<Mamifero> listado) {
-        Mamifero.listado = listado;
+    public static void setListado(ArrayList<Ave> listado) {
+        Ave.listado = listado;
     }
 
-    public boolean getPelaje() {
-        return pelaje;
+    public String getColorPlumas() {
+        return colorPlumas;
     }
 
-    public void setPelaje(boolean pelaje) {
-        this.pelaje = pelaje;
-    }
-
-    public int getPatas() {
-        return patas;
-    }
-
-    public void setPatas(int patas) {
-        this.patas = patas;
+    public void setColorPlumas(String colorPlumas) {
+        this.colorPlumas = colorPlumas;
     }
     
     public static int cantidadAves() {
-        return Mamifero.listado.size();
+        return Ave.listado.size();
     }
 
-    public static void crearCaballo(String nombre, int edad, String genero) {
-        new Mamifero(nombre, edad, "pradera", genero,true, 4);
-        Mamifero.caballos++;
+    @Override
+    public String movimiento() {
+        return "volar";
     }
 
-    public static void crearLeon(String nombre, int edad, String genero) {
-        new Mamifero(nombre, edad, "selva", genero,true, 4);
-        Mamifero.leones++;
+    public static void crearHalcon(String nombre, int edad, String genero) {
+        new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
+        Ave.halcones++;
+    }
+
+    public static void crearAguila(String nombre, int edad, String genero) {
+        new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
+        Ave.aguilas++;
     }
 }
