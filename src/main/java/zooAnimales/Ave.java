@@ -47,7 +47,7 @@ public class Mamifero extends Animal {
         this.patas = patas;
     }
     
-    public static int cantidadMamiferos() {
+    public static int cantidadAves() {
         return Mamifero.listado.size();
     }
 
